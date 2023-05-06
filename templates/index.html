@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histogram of Ads Selections</title>
+    <style>
+        /* Add some styles to make the webpage look more attractive */
+        h1{
+          text-align:center;
+          font-size: 2em;
+          margin-top:50px;
+        }
+        img{
+          width: 60%;
+          margin: auto;
+          display: block;
+        }
+        p{
+          font-size: 1.2em;
+          text-align: center;
+          margin-top: 20px;
+        }
+      </style>
+</head>
+<body>
+    <h1>Histogram of Ads Selections</h1>
+    <img src="{{ url_for('static', filename='ads_selection.png') }}" alt="Histogram of ads selections"><br><br><br>
+    <centre><img src="{{ url_for('static', filename='true_clicks.png') }}" alt="Histogram of ads selections"></centre>
+    <p>This histogram shows the number of times each ad was selected by the UCB algorithm. The x-axis represents the ads, and the y-axis represents the number of times each ad was selected. It can help you to decide which ads to invest your budget in.</p>
+    <p>The best ad can be found by  <code>best_ad = sums_of_rewards_of_each_ads.index(max(sums_of_rewards_of_each_ads))</code> and it will give you the ad which is performing best among the ads.</p>
+    <p>Best Ad: {{ bestad+1 }}</p>
+</body>
+</html>
